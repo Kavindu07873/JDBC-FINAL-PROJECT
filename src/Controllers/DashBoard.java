@@ -15,4 +15,13 @@ public class DashBoard {
         this.root.getChildren().clear();
         this.root.getChildren().add(FXMLLoader.load(this.getClass().getResource("../view/Student.fxml")));
     }
+
+    public void btnOnSubject(ActionEvent actionEvent) {
+    }
+
+    public void btnOnSearch(ActionEvent actionEvent) {
+    }
+
+    public void btnOnCourse(ActionEvent actionEvent) {
+    }
 }
