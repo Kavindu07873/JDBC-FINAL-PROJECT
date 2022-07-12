@@ -149,6 +149,18 @@ public class Student {
         }
     }
 
-    public void btnondelete(ActionEvent actionEvent) {
+    public void btnondelete(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        try {
+            if(  CrudUtill.execute("DELETE FROM Student  WHERE Student_id = ?",txtid.getText())){
+                new Alert(Alert.AlertType.CONFIRMATION,"Deleted!..").showAndWait();
+
+            }else {
+                new Alert(Alert.AlertType.WARNING,"Try Again!").show();
+
+            }
+        }catch (SQLException | ClassNotFoundException e){
+
+        }
+        loadAllStudent();
     }
 }
