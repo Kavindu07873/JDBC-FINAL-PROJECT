@@ -163,5 +163,11 @@ public class Student {
 
         }
         loadAllStudent();
+        txtid.clear();
+        txtaddress.clear();
+        txtnic.clear();
+        txtcon.clear();
+        txtnic.clear();
+        txtname.clear();
     }
 }
