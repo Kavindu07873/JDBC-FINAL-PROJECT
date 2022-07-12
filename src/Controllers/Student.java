@@ -96,7 +96,7 @@ public class Student {
         }
     }
 
-    public void btnonadd(ActionEvent actionEvent) {
+    public void btnonadd(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         Model.Student S = new Model.Student(
                 txtid.getText(),
                 txtname.getText(),
@@ -115,6 +115,7 @@ public class Student {
             e.printStackTrace();
             new  Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    loadAllStudent();
     }
 
     public void btnonupdate(ActionEvent actionEvent) {
