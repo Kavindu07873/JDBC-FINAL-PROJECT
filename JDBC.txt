@@ -1,0 +1,68 @@
+Drop database ijse;
+Create database ijse;
+use ijse;
+
+CREATE TABLE Student(
+Student_id VARCHAR(45),
+Student_name VARCHAR(45),
+email TEXT,
+contact VARCHAR(45),
+address TEXT,
+nic VARCHAR(45),
+CONSTRAINT PRIMARY KEY(Student_id)
+);
+
+
+CREATE TABLE Teacher(
+Teacher_id VARCHAR(45),
+name VARCHAR(45),
+nic VARCHAR(45),
+contact VARCHAR(45),
+address TEXT,
+CONSTRAINT PRIMARY KEY(Teacher_id)
+);
+
+CREATE TABLE subject(
+Subject_id VARCHAR(45) PRIMARY KEY,
+Subject_name VARCHAR(45),
+Credit DOUBLE,
+Teacher_id VARCHAR(45),
+CONSTRAINT FOREIGN KEY (Teacher_id) REFERENCES  Teacher (Teacher_id ) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Course(
+Course_id VARCHAR(45) PRIMARY KEY,
+Course_name VARCHAR(45),
+Cost DOUBLE,
+Duration VARCHAR(45),
+Subject_id VARCHAR(45),
+CONSTRAINT FOREIGN KEY (Subject_id) REFERENCES  subject (Subject_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Intake(
+Intake_id VARCHAR(45) PRIMARY KEY,
+Start_date DATE,
+Intake_ecol VARCHAR(45),
+Description VARCHAR(45),
+Course_id VARCHAR(45),
+CONSTRAINT FOREIGN KEY (Course_id) REFERENCES  Course (Course_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Rejistation(
+Rejistation_id VARCHAR(45) PRIMARY KEY,
+Reg_Date DATE,
+Student_ID VARCHAR(45),
+Intake_Id  VARCHAR(45),
+CONSTRAINT FOREIGN KEY (Student_ID) REFERENCES  Student (Student_id) ON UPDATE CASCADE ON DELETE CASCADE,
+CONSTRAINT FOREIGN KEY (Intake_Id) REFERENCES  Intake (Intake_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Payment(
+Payment_id VARCHAR(45) PRIMARY KEY,
+date DATE ,
+Cost DOUBLE,
+Rejistation_id VARCHAR(45),
+CONSTRAINT FOREIGN KEY (Rejistation_id) REFERENCES  Rejistation (Rejistation_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
