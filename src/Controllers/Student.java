@@ -118,6 +118,35 @@ public class Student {
     }
 
     public void btnonupdate(ActionEvent actionEvent) {
+
+        Model.Student S = new Model.Student(
+                txtid.getText(),
+                txtname.getText(),
+                txtemail.getText(),
+                txtcon.getText(),
+                txtaddress.getText(),
+                txtnic.getText()
+        );
+        try {
+            boolean isupdated = CrudUtill.execute
+                    ("UPDATE Student  SET Student_name=?,email=?,contact =?,address =?,nic =? WHERE Student_id = ?"
+                 , S.getStuName(),S.getEmail(),S.getContact(),S.getAddress(),S.getNic(),S.getStuid()
+                    );
+            if (isupdated) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Updated!").showAndWait();
+                tblStudent.refresh();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Try Again!").show();
+            }
+            tblStudent.refresh();
+        } catch (SQLException | ClassNotFoundException e) {
+
+        }
+        try {
+            loadAllStudent();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnondelete(ActionEvent actionEvent) {
