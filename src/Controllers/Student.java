@@ -16,6 +16,14 @@ public class Student {
     public Button txtbtn;
     public Button txtupdate;
 
+    public void initialize(){
+        loadAllStudent();
+    }
+
+    private void loadAllStudent() {
+
+    }
+
     public void btnonSearch(ActionEvent actionEvent) {
     }
 
