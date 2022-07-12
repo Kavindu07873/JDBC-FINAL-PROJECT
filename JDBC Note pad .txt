@@ -13,7 +13,10 @@ CONSTRAINT PRIMARY KEY(Student_id)
 );
 
 INSERT INTO Student VALUES ('2','Avi','Avi.com', '076','galle','111');
-
+INSERT INTO Student VALUES ('3','kAvi','kAvi.com', '0756','panadura','111');
+INSERT INTO Student VALUES ('4','dAvi','dAvi.com', '07766','mathara','111');
+INSERT INTO Student VALUES ('5','mAvi','mAvi.com', '0776','galle','111');
+INSERT INTO Student VALUES ('6','lAvi','lAvi.com', '07776','galle','111');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CREATE TABLE Teacher(
