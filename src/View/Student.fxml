@@ -16,14 +16,14 @@
             <Font name="System Bold" size="33.0" />
          </font>
       </Label>
-      <TableView layoutX="59.0" layoutY="454.0" prefHeight="273.0" prefWidth="600.0">
+      <TableView fx:id="tblStudent" layoutX="59.0" layoutY="454.0" prefHeight="273.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="Student Id" />
-          <TableColumn prefWidth="100.0" text="Name" />
-            <TableColumn prefWidth="100.0" text="Email" />
-            <TableColumn prefWidth="100.0" text="Contact" />
-            <TableColumn prefWidth="100.0" text=" Address" />
-            <TableColumn prefWidth="100.0" text="nic" />
+          <TableColumn fx:id="cold" prefWidth="100.0" text="Student Id" />
+          <TableColumn fx:id="colName" prefWidth="100.0" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="100.0" text="Email" />
+            <TableColumn fx:id="colCont" prefWidth="100.0" text="Contact" />
+            <TableColumn fx:id="colAddress" prefWidth="100.0" text=" Address" />
+            <TableColumn fx:id="colNic" prefWidth="100.0" text="nic" />
         </columns>
       </TableView>
       <JFXTextField fx:id="txtname" labelFloat="true" layoutX="37.0" layoutY="160.0" prefHeight="31.0" prefWidth="252.0" promptText="name" />
@@ -31,7 +31,7 @@
       <JFXTextField fx:id="txtemail" labelFloat="true" layoutX="37.0" layoutY="217.0" prefHeight="31.0" prefWidth="252.0" promptText="email" />
       <JFXTextField fx:id="txtcon" labelFloat="true" layoutX="37.0" layoutY="268.0" prefHeight="31.0" prefWidth="252.0" promptText="cont" />
       <JFXTextField fx:id="txtaddress" labelFloat="true" layoutX="37.0" layoutY="312.0" prefHeight="31.0" prefWidth="252.0" promptText="address" />
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="31.0" layoutY="360.0" prefHeight="31.0" prefWidth="252.0" promptText="nic" />
+      <JFXTextField fx:id="txtnic" labelFloat="true" layoutX="31.0" layoutY="360.0" prefHeight="31.0" prefWidth="252.0" promptText="nic" />
       <Button fx:id="txtbtn" layoutX="478.0" layoutY="145.0" mnemonicParsing="false" onAction="#btnonadd" prefHeight="31.0" prefWidth="69.0" text="ADD" />
       <Button fx:id="txtupdate" layoutX="478.0" layoutY="202.0" mnemonicParsing="false" onAction="#btnonupdate" text="Update" />
       <Button layoutX="478.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnondelete" prefHeight="31.0" prefWidth="69.0" text="Delete" />
