@@ -12,6 +12,9 @@ nic VARCHAR(45),
 CONSTRAINT PRIMARY KEY(Student_id)
 );
 
+INSERT INTO Student VALUES ('2','Avi','Avi.com', '076','galle','111');
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CREATE TABLE Teacher(
 Teacher_id VARCHAR(45),
@@ -22,6 +25,10 @@ address TEXT,
 CONSTRAINT PRIMARY KEY(Teacher_id)
 );
 
+
+INSERT INTO Teacher VALUES ('T1','amara','111v', '078','galle' );
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 CREATE TABLE subject(
 Subject_id VARCHAR(45) PRIMARY KEY,
 Subject_name VARCHAR(45),
@@ -30,6 +37,8 @@ Teacher_id VARCHAR(45),
 CONSTRAINT FOREIGN KEY (Teacher_id) REFERENCES  Teacher (Teacher_id ) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+INSERT INTO subject VALUES ('sub1','Physics',100, 'T1');
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 CREATE TABLE Course(
 Course_id VARCHAR(45) PRIMARY KEY,
 Course_name VARCHAR(45),
@@ -39,6 +48,9 @@ Subject_id VARCHAR(45),
 CONSTRAINT FOREIGN KEY (Subject_id) REFERENCES  subject (Subject_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+INSERT INTO Course VALUES ('Co1','GDSE',100000, '2 Year','sub1');
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 CREATE TABLE Intake(
 Intake_id VARCHAR(45) PRIMARY KEY,
 Start_date DATE,
@@ -48,6 +60,9 @@ Course_id VARCHAR(45),
 CONSTRAINT FOREIGN KEY (Course_id) REFERENCES  Course (Course_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+
+INSERT INTO Intake VALUES ('In1','2022/06/05','Danne na', 'ok','Co1');
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 CREATE TABLE Rejistation(
 Rejistation_id VARCHAR(45) PRIMARY KEY,
 Reg_Date DATE,
@@ -57,6 +72,8 @@ CONSTRAINT FOREIGN KEY (Student_ID) REFERENCES  Student (Student_id) ON UPDATE C
 CONSTRAINT FOREIGN KEY (Intake_Id) REFERENCES  Intake (Intake_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+INSERT INTO Rejistation VALUES ('R1','2022/06/05','1', 'In1');
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 CREATE TABLE Payment(
 Payment_id VARCHAR(45) PRIMARY KEY,
 date DATE ,
@@ -65,4 +82,5 @@ Rejistation_id VARCHAR(45),
 CONSTRAINT FOREIGN KEY (Rejistation_id) REFERENCES  Rejistation (Rejistation_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+INSERT INTO Payment VALUES ('pay1','2022/06/05',10000, 'R1');
 
