@@ -26,6 +26,8 @@ public class DashBoard {
     public void btnOnSearch(ActionEvent actionEvent) {
     }
 
-    public void btnOnCourse(ActionEvent actionEvent) {
+    public void btnOnCourse(ActionEvent actionEvent) throws IOException {
+        this.root.getChildren().clear();
+        this.root.getChildren().add(FXMLLoader.load(this.getClass().getResource("../view/Course.fxml")));
     }
 }
