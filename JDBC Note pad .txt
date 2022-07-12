@@ -12,6 +12,12 @@ nic VARCHAR(45),
 CONSTRAINT PRIMARY KEY(Student_id)
 );
 
+INSERT INTO Student VALUES ('2','Avi','Avi.com', '076','galle','111');
+INSERT INTO Student VALUES ('3','kAvi','kAvi.com', '0756','panadura','111');
+INSERT INTO Student VALUES ('4','dAvi','dAvi.com', '07766','mathara','111');
+INSERT INTO Student VALUES ('5','mAvi','mAvi.com', '0776','galle','111');
+INSERT INTO Student VALUES ('6','lAvi','lAvi.com', '07776','galle','111');
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INSERT INTO Student VALUES ('2','Avi','Avi.com', '076','galle','111');
 INSERT INTO Student VALUES ('3','Avi','Avi.com', '076','galle','111');
@@ -30,7 +36,11 @@ CONSTRAINT PRIMARY KEY(Teacher_id)
 
 INSERT INTO Teacher VALUES ('T1','amara','111v', '078','galle' );
 
+<<<<<<< HEAD:JDBC.txt
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 5691e2b83abd9b589b16cba35d742463124151e0:JDBC Note pad .txt
 CREATE TABLE subject(
 Subject_id VARCHAR(45) PRIMARY KEY,
 Subject_name VARCHAR(45),
@@ -40,7 +50,11 @@ CONSTRAINT FOREIGN KEY (Teacher_id) REFERENCES  Teacher (Teacher_id ) ON UPDATE 
 );
 
 INSERT INTO subject VALUES ('sub1','Physics',100, 'T1');
+<<<<<<< HEAD:JDBC.txt
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 5691e2b83abd9b589b16cba35d742463124151e0:JDBC Note pad .txt
 CREATE TABLE Course(
 Course_id VARCHAR(45) PRIMARY KEY,
 Course_name VARCHAR(45),
@@ -52,7 +66,11 @@ CONSTRAINT FOREIGN KEY (Subject_id) REFERENCES  subject (Subject_id) ON UPDATE C
 
 INSERT INTO Course VALUES ('Co1','GDSE',100000, '2 Year','sub1');
 
+<<<<<<< HEAD:JDBC.txt
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 5691e2b83abd9b589b16cba35d742463124151e0:JDBC Note pad .txt
 CREATE TABLE Intake(
 Intake_id VARCHAR(45) PRIMARY KEY,
 Start_date DATE,
@@ -62,8 +80,14 @@ Course_id VARCHAR(45),
 CONSTRAINT FOREIGN KEY (Course_id) REFERENCES  Course (Course_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+<<<<<<< HEAD:JDBC.txt
 INSERT INTO Intake VALUES ('In1','2022/06/05','Danne na', 'ok','Co1');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+
+INSERT INTO Intake VALUES ('In1','2022/06/05','Danne na', 'ok','Co1');
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 5691e2b83abd9b589b16cba35d742463124151e0:JDBC Note pad .txt
 CREATE TABLE Rejistation(
 Rejistation_id VARCHAR(45) PRIMARY KEY,
 Reg_Date DATE,
@@ -74,7 +98,11 @@ CONSTRAINT FOREIGN KEY (Intake_Id) REFERENCES  Intake (Intake_id) ON UPDATE CASC
 );
 
 INSERT INTO Rejistation VALUES ('R1','2022/06/05','1', 'In1');
+<<<<<<< HEAD:JDBC.txt
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 5691e2b83abd9b589b16cba35d742463124151e0:JDBC Note pad .txt
 CREATE TABLE Payment(
 Payment_id VARCHAR(45) PRIMARY KEY,
 date DATE ,
